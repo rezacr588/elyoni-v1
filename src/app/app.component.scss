@@ -1,0 +1,33 @@
+/* src/styles.scss */
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #fdfdfd;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  color: #2c2c2c;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Define color variables for Earth tones and gold accents */
+:root {
+  --main-green: #4a7c59;
+  --main-brown: #8c5a2d;
+  --main-beige: #f3efea;
+  --gold-accent: #bfa26f;
+}
+
+/* src/app/app.component.scss */
+main {
+    min-height: 80vh; /* Adjust as needed */
+  }
+  

@@ -1,0 +1,22 @@
+/* src/app/core/components/header/header.component.scss */
+.navbar {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--main-beige);
+  
+    .navbar-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--main-green);
+    }
+  
+    .nav-link {
+      color: var(--main-green) !important;
+      margin: 0 0.5rem;
+  
+      &.active {
+        font-weight: bold;
+        color: var(--main-brown) !important;
+      }
+    }
+  }
+  

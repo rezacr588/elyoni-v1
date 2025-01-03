@@ -1,0 +1,15 @@
+/* src/app/core/components/footer/footer.component.scss */
+footer {
+    color: #333;
+    p {
+      margin: 0;
+    }
+    a {
+      color: var(--main-green);
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  
