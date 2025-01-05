@@ -4,5 +4,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-  
+    padding: 2rem;
+
+    @media (max-width: 768px) {
+        min-height: 50vh;
+        padding: 1rem;
+    }
+}
+
+// Ensure all images have the same dimensions
+.card-img-top,
+.mb-2.img-fluid {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
