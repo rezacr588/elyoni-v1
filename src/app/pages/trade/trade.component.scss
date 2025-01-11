@@ -1,0 +1,121 @@
+/* 
+  Fonts assumption:
+    - Montserrat for headings
+    - Open Sans (or Nunito) for body text
+
+  Example in index.html:
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet"
+/>
+*/
+
+/* ====== COLOR VARIABLES (customize as needed) ====== */
+$farm-bg-light: #f8f5ec;     /* Subtle farm-friendly background */
+$farm-green-dark: #3e4e2d;   /* Earthy dark green for headings */
+$farm-green-main: #6a994e;   /* Vibrant medium green for accents */
+$text-color: #555;           /* Body text color */
+$border-color: #eee;         /* Neutral border */
+
+/* ====== MAIN TRADE SECTION WRAPPER ====== */
+.trade-section {
+  background-color: $farm-bg-light;
+  font-family: "Open Sans", sans-serif;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Title & Intro */
+  .trade-title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: $farm-green-dark;
+  }
+
+  .trade-intro {
+    max-width: 700px;
+    font-size: 1rem;
+    color: $text-color;
+    line-height: 1.6;
+  }
+
+  /* Regions & Info Box */
+  .trade-row {
+    .section-subtitle {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: 1.4rem;
+      color: $farm-green-dark;
+      margin-bottom: 1rem;
+    }
+
+    .region-list {
+      list-style-type: disc;
+      margin-left: 1.2rem;
+      font-size: 1rem;
+      color: $text-color;
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .trade-highlight {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+
+      @media (min-width: 768px) {
+        margin-top: 0;
+      }
+
+      .highlight-box {
+        background-color: #fff;
+        border: 2px solid $border-color;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        transition: 0.3s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .highlight-title {
+          font-family: "Montserrat", sans-serif;
+          font-size: 1.2rem;
+          color: $farm-green-dark;
+          margin-bottom: 0.5rem;
+        }
+
+        .highlight-text {
+          font-size: 0.95rem;
+          color: #666;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+
+  /* Export-Ready Products Section */
+  .export-ready-section {
+    .section-subtitle {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: $farm-green-dark;
+      margin-bottom: 1rem;
+    }
+
+    .export-text {
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+  }
+}

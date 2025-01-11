@@ -1,0 +1,134 @@
+/* 
+  Load in your main index.html or global styles:
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+  - Montserrat: headings
+  - Open Sans: body text
+*/
+
+/* ----- COLOR PALETTE (Adjust as desired) ----- */
+$farm-bg-light: #f8f5ec;       /* Light beige for the page background */
+$farm-green-dark: #3e4e2d;     /* Earthy dark green for headings/text */
+$farm-green-main: #6a994e;     /* Vibrant medium green (accents) */
+$farm-brown: #b99e78;          /* Warm brown accent */
+
+/* ----- ABOUT PAGE WRAPPER ----- */
+.about-farm {
+  background-color: $farm-bg-light;
+  font-family: "Open Sans", sans-serif;
+  min-height: 100vh; /* If you want a full-page look */
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* ----- Title & Intro ----- */
+  .about-title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: $farm-green-dark;
+  }
+
+  .about-intro {
+    max-width: 700px;
+    color: #555;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  /* ----- Mission & Highlight Section ----- */
+  .about-row {
+    .section-subtitle {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: $farm-green-dark;
+      margin-bottom: 1rem;
+    }
+
+    .about-text {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* Right-side highlight box */
+    .about-highlight {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .highlight-box {
+        background-color: #fff;
+        border: 2px solid #eee;
+        border-radius: 8px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+
+        .highlight-title {
+          font-family: "Montserrat", sans-serif;
+          font-size: 1.2rem;
+          color: $farm-green-dark;
+          margin-bottom: 0.5rem;
+        }
+
+        .highlight-text {
+          color: #666;
+          font-size: 0.95rem;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+
+  /* ----- Team Section ----- */
+  .team-section {
+    margin-top: 3rem;
+
+    .section-subtitle {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: $farm-green-dark;
+      margin-bottom: 1rem;
+    }
+
+    .team-card {
+      background-color: #fff;
+      border: 2px solid #eee;
+      border-radius: 8px;
+      transition: 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      }
+
+      .team-name {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: $farm-green-dark;
+        margin-bottom: 0.25rem;
+      }
+
+      .team-position {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: $farm-green-main;
+        margin-bottom: 0.75rem;
+      }
+
+      .team-desc {
+        font-size: 0.95rem;
+        color: #666;
+        line-height: 1.5;
+      }
+    }
+  }
+}

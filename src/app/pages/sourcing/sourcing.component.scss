@@ -1,0 +1,134 @@
+/* 
+  As with your other pages, be sure to load fonts in your index.html or a global style:
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  Colors & Fonts:
+    - Montserrat for headings
+    - Open Sans (or Nunito) for body text
+*/
+
+/* ====== COLOR VARIABLES (Adjust to match your brand) ====== */
+$farm-bg-light: #f8f5ec;      /* Light beige, subtle farm feel */
+$farm-green-dark: #3e4e2d;    /* Earthy dark green for headings/text */
+$farm-green-main: #6a994e;    /* Vibrant medium green (accents) */
+$text-body: #555;             /* Body text color */
+$border-color: #eee;          /* Neutral border */
+
+/* ====== MAIN WRAPPER ====== */
+.sourcing-section {
+  background-color: $farm-bg-light;
+  font-family: "Open Sans", sans-serif;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Title & Intro */
+  .sourcing-title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: $farm-green-dark;
+  }
+
+  .sourcing-intro {
+    max-width: 700px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: $text-body;
+  }
+
+  /* ===== SUSTAINABILITY FOCUS ===== */
+  .sourcing-row {
+    .section-subtitle {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: $farm-green-dark;
+      margin-bottom: 1rem;
+    }
+
+    .sourcing-text {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: $text-body;
+    }
+
+    .sourcing-highlight {
+      background-color: #fff;
+      border: 2px solid $border-color;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+      .highlight-title {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.2rem;
+        color: $farm-green-dark;
+        margin-bottom: 0.5rem;
+      }
+
+      .highlight-list {
+        list-style-type: disc;
+        margin-left: 1.2rem;
+        font-size: 0.95rem;
+        color: #666;
+
+        li {
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+
+  /* ===== STEPS SECTION ===== */
+  .steps-section {
+    .section-subtitle {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: $farm-green-dark;
+      margin-bottom: 1rem;
+    }
+
+    .step-card {
+      background-color: #fff;
+      border: 2px solid $border-color;
+      border-radius: 8px;
+      transition: 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      }
+
+      .step-title {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: $farm-green-dark;
+        margin-bottom: 0.5rem;
+      }
+
+      .step-text {
+        font-size: 0.95rem;
+        color: #666;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  /* ===== CLOSING NOTE ===== */
+  .closing-note {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+}

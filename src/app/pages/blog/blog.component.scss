@@ -1,0 +1,143 @@
+/* 
+  1) Fonts loaded in index.html or globally:
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  2) Colors, wave shapes, etc. can be tweaked or removed.
+*/
+
+/* ===== COLOR VARIABLES ===== */
+$farm-green-dark: #3e4e2d;
+$farm-green-main: #6a994e;
+$farm-bg-light: #f9f6ec;
+$text-color: #555;
+$overlay-color: rgba(0, 0, 0, 0.4); /* For hero overlay */
+
+/* ===== HERO SECTION ===== */
+.blog-hero {
+  position: relative;
+  width: 100%;
+  height: 60vh; /* Adjust as desired */
+  background: url('https://picsum.photos/1200/600?random=999') no-repeat center/cover;
+  /* Optionally override with your featuredPost.image if you want dynamic hero images:
+   * background: url('{{ featuredPost?.image }}') no-repeat center/cover;
+   */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $overlay-color; /* Dark overlay for better text visibility */
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2; /* Above overlay */
+    max-width: 800px;
+  }
+
+  .hero-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+  }
+
+  .hero-excerpt {
+    max-width: 600px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}
+
+/* Optional Wavy Divider */
+.wave {
+  position: relative;
+  width: 100%;
+  height: 100px;
+}
+
+.wave-bottom {
+  background: #fff;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+  margin-top: -3px; /* to avoid any gap from hero overlap if needed */
+}
+
+/* ===== MAIN BLOG SECTION ===== */
+.blog-section {
+  background-color: $farm-bg-light;
+
+  .section-heading {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: $farm-green-dark;
+  }
+
+  .blog-post-card {
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-title {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.1rem;
+      color: $farm-green-dark;
+    }
+
+    .card-text {
+      font-family: "Open Sans", sans-serif;
+      font-size: 0.95rem;
+      color: $text-color;
+    }
+  }
+}
+
+/* ===== BUTTONS ===== */
+.btn-farm-hero {
+  background-color: $farm-green-main;
+  color: #fff;
+  border: 2px solid $farm-green-main;
+  border-radius: 20px;
+  padding: 0.6rem 1.4rem;
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+  transition: background-color 0.3s, border-color 0.3s;
+
+  &:hover {
+    background-color: darken($farm-green-main, 8%);
+    border-color: darken($farm-green-main, 8%);
+  }
+}
+
+.btn-farm-viewall {
+  background-color: $farm-green-main;
+  color: #fff;
+  border: 2px solid $farm-green-main;
+  border-radius: 20px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  transition: background-color 0.3s, border-color 0.3s;
+  font-family: "Open Sans", sans-serif;
+
+  &:hover {
+    background-color: darken($farm-green-main, 8%);
+    border-color: darken($farm-green-main, 8%);
+  }
+}

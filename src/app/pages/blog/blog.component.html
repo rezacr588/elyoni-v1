@@ -1,31 +1,35 @@
-<!-- src/app/pages/blog/blog.component.html -->
-<div class="container py-5">
-    <h1 class="text-center mb-4">Blog</h1>
-
-    <div class="card mb-3">
-        <div class="card-body">
-            <h2 class="card-title">Top 5 Benefits of Cumin Seeds</h2>
-            <p class="card-text">Cumin seeds offer various health benefits, including improved digestion and immunity...
-            </p>
-            <button class="btn btn-primary">Read More</button>
-        </div>
+<!-- HERO SECTION (Featured Post) -->
+<div class="blog-hero" *ngIf="featuredPost as post">
+    <div class="hero-overlay"></div>
+    <div class="hero-content container text-center text-white">
+        <h1 class="hero-title mb-3">{{ post.title }}</h1>
+        <p class="hero-excerpt mb-4 mx-auto">
+            {{ post.excerpt }}
+        </p>
+        <button class="btn btn-farm-hero">Read Featured</button>
     </div>
+</div>
 
-    <div class="card mb-3">
-        <div class="card-body">
-            <h2 class="card-title">How Pistachios Can Boost Brain Health</h2>
-            <p class="card-text">Packed with nutrients, pistachios support cognitive function and help maintain overall
-                brain health...</p>
-            <button class="btn btn-primary">Read More</button>
-        </div>
-    </div>
+<!-- Optional Wavy Divider -->
+<div class="wave wave-bottom"></div>
 
-    <div class="card mb-3">
-        <div class="card-body">
-            <h2 class="card-title">The Traditional Art of Honey Harvesting in High Altitudes</h2>
-            <p class="card-text">Mountain honey is prized for its purity. Discover how local farmers collect this
-                natural treasure...</p>
-            <button class="btn btn-primary">Read More</button>
+<!-- MAIN BLOG SECTION -->
+<div class="blog-section container py-5">
+    <h2 class="section-heading text-center mb-5">More Articles</h2>
+
+    <!-- Masonry-like grid: 3 columns on lg, 2 on md, 1 on sm -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col" *ngFor="let p of otherPosts">
+            <div class="card blog-post-card h-100 shadow-sm">
+                <img [src]="p.image" class="card-img-top" alt="Blog Image" />
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title mb-3">{{ p.title }}</h5>
+                    <p class="card-text flex-grow-1">{{ p.excerpt }}</p>
+                    <div class="text-end">
+                        <button class="btn btn-farm-viewall">Read More</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
