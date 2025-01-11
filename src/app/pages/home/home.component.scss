@@ -1,21 +1,175 @@
-/* src/app/pages/home/home.component.scss */
-.hero-section {
-    min-height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2rem;
+/* 
+  LOAD FONTS in index.html or global:
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  
+  - Montserrat for HEADINGS
+  - Open Sans for BODY
+*/
 
-    @media (max-width: 768px) {
-        min-height: 50vh;
-        padding: 1rem;
-    }
+/* ========== COLOR VARIABLES ========== */
+$dark-green: #3e4e2d;       /* Earthy dark green */
+$medium-green: #6a994e;     /* Vibrant medium green for main CTA */
+$medium-green-dark: #527c3b;
+$hero-overlay: rgba(0, 0, 0, 0.4); /* Dark overlay for hero image text contrast */
+
+/* 
+   A fallback gradient if the hero image doesn't load, 
+   you can tweak colors or remove if always using an image 
+*/
+$hero-fallback-start: #f5f9f0;
+$hero-fallback-end: #edf7e2;
+
+/* ========== HERO SECTION ========== */
+.farm-hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+  background: linear-gradient(135deg, $hero-fallback-start, $hero-fallback-end);
+  background-blend-mode: overlay;
+  overflow: hidden;
+
+  /* Dark Overlay for better text readability on images */
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $hero-overlay;
+    z-index: 1; /* Sits above background, behind content */
+  }
+
+  .hero-content {
+    z-index: 2; /* Place content above overlay */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .farm-hero-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .farm-hero-subtitle {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+  }
+
+  .farm-hero-buttons .btn {
+    border-radius: 30px;
+    padding: 0.6rem 1.4rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-family: "Open Sans", sans-serif;
+  }
 }
 
-// Ensure all images have the same dimensions
-.card-img-top,
-.mb-2.img-fluid {
+/* ====== FARM-THEMED BUTTONS ====== */
+.btn-farm {
+  background-color: $medium-green;
+  color: #fff;
+  border: 2px solid $medium-green;
+
+  &:hover {
+    background-color: $medium-green-dark;
+    border-color: $medium-green-dark;
+    color: #fff;
+  }
+}
+
+.btn-farm-outline {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+
+  &:hover {
+    background-color: #fff;
+    color: $medium-green;
+    border-color: $medium-green;
+  }
+}
+
+.btn-farm-viewall {
+  background-color: $medium-green;
+  color: #fff;
+  border: 2px solid $medium-green;
+  border-radius: 20px;
+  padding: 0.6rem 1.4rem;
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $medium-green-dark;
+    border-color: $medium-green-dark;
+    color: #fff;
+  }
+}
+
+/* ========== SECTION STYLES ========== */
+.farm-section {
+  font-family: "Open Sans", sans-serif;
+
+  .section-heading {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: $dark-green;
+    margin-bottom: 2rem;
+  }
+
+  .farm-icon {
     width: 100%;
-    height: 250px;
+    height: 220px;
     object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .feature-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+    color: $dark-green;
+    margin-bottom: 0.4rem;
+  }
+}
+
+/* ====== CARD STYLES ====== */
+.farm-card {
+  border-radius: 8px;
+  overflow: hidden; /* ensures images have rounded corners */
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #fff;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  .card-img-top {
+    width: 100%;
+    height: 250px; /* consistent height across images */
+    object-fit: cover;
+  }
+
+  .card-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.1rem;
+    color: $dark-green;
+    margin-bottom: 0.3rem;
+  }
+
+  .card-text {
+    font-family: "Open Sans", sans-serif;
+    color: #666;
+    font-size: 0.95rem;
+  }
 }

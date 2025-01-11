@@ -1,0 +1,61 @@
+/* 
+  A subtle green-ish gradient reminiscent of farmland.
+  Adjust the colors as desired for your brand.
+*/
+.farm-bg {
+    background: linear-gradient(135deg, #f5f9f0, #edf7e2);
+    font-family: "Nunito", sans-serif; /* Main body font */
+  }
+  
+  /* Section Title - using Playfair Display for a rustic, elegant feel */
+  .section-title {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #3e4e2d; /* A darker earthy green for headings */
+  }
+  
+  /* Card Container */
+  .farm-card {
+    border-radius: 10px;
+    overflow: hidden; /* Ensures rounded corners around images */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    /* Slightly tinted white if desired (ex: #fefdfc) */
+  }
+  
+  .farm-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  }
+  
+  /* Card Title */
+  .farm-card .card-title {
+    font-family: "Playfair Display", serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #3e4e2d;
+  }
+  
+  /* Uniform Image Sizes */
+  .farm-card .card-img-top {
+    width: 100%;
+    height: 220px; /* Adjust to your preference */
+    object-fit: cover;
+  }
+  
+  /* Farm-Themed Button */
+  .btn-farm {
+    background-color: #6a994e; /* Earthy green */
+    border: 2px solid #6a994e;
+    color: #fff;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .btn-farm:hover {
+    background-color: #527c3b; /* Darker green on hover */
+    border-color: #527c3b;
+    color: #fff;
+  }
+  

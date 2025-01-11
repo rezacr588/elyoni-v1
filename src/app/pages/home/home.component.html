@@ -1,78 +1,99 @@
-<!-- src/app/pages/home/home.component.html -->
-<div class="hero-section text-white text-center p-5" [style.background]="getHeroUrl()">
-    <h1 class="mb-3 fw-bold">Experience the Purity of Nature with Elyoni</h1>
-    <p class="mb-4 fw-bold">100% natural, handpicked products with therapeutic benefits.</p>
-    <div class="d-flex gap-4 mx-auto">
-        <a href="/products">
-            <button class="btn btn-success fw-bold">Explore Products</button>
-        </a>
-        <a href="/about">
-            <button class="btn btn-outline-light fw-bold">Learn More About Us</button>
-        </a>
+<!-- HERO SECTION -->
+<div class="farm-hero-section text-white d-flex flex-column justify-content-center align-items-center"
+    [style.background]="getHeroUrl()">
+    <div class="hero-overlay"></div> <!-- Subtle overlay for contrast -->
+
+    <div class="hero-content text-center position-relative">
+        <h1 class="farm-hero-title">
+            Experience the Purity of Nature with Elyoni
+        </h1>
+        <p class="farm-hero-subtitle mb-4">
+            100% natural, handpicked products with therapeutic benefits.
+        </p>
+        <div class="farm-hero-buttons d-flex gap-4 justify-content-center">
+            <a routerLink="/products">
+                <button class="btn btn-farm">Explore Products</button>
+            </a>
+            <a routerLink="/about">
+                <button class="btn btn-farm-outline">Learn More About Us</button>
+            </a>
+        </div>
     </div>
 </div>
 
-<div class="container py-5">
-    <h2 class="mb-4 text-center">Why Choose Us?</h2>
+<!-- WHY CHOOSE US -->
+<section class="farm-section container mt-4">
+    <h2 class="mb-4 text-center section-heading">Why Choose Us?</h2>
     <div class="row text-center">
-        <div class="col-md-4 mb-3">
+        <!-- 100% Natural Sourcing -->
+        <div class="col-md-4 mb-4">
             <img src="https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/h/a/Harry%20Randell-27May18-0627.jpg?crop=0%2C233%2C4000%2C2200&wid=4000&hei=2200&scl=1.0"
-                alt="Natural Icon" class="mb-2 img-fluid">
-            <h5>100% Natural Sourcing</h5>
-            <p>We use no chemicals and follow traditional methods.</p>
+                alt="Natural Icon" class="farm-icon mb-3 img-fluid" />
+            <h5 class="feature-title">100% Natural Sourcing</h5>
+            <p class="text-muted">We use no chemicals and follow traditional methods.</p>
         </div>
-        <div class="col-md-4 mb-3">
+        <!-- Sustainability & Tradition -->
+        <div class="col-md-4 mb-4">
             <img src="https://files.worldwildlife.org/wwfcmsprod/images/Fiji_aerial_2_WW2139876_Tom_Vierus/magazine_hero/qt924ple5_Medium_WW2139876.jpg"
-                alt="Sustainability Icon" class="mb-2 img-fluid">
-            <h5>Sustainability & Tradition</h5>
-            <p>Supporting local communities with eco-friendly practices.</p>
+                alt="Sustainability Icon" class="farm-icon mb-3 img-fluid" />
+            <h5 class="feature-title">Sustainability & Tradition</h5>
+            <p class="text-muted">Supporting local communities with eco-friendly practices.</p>
         </div>
-        <div class="col-md-4 mb-3">
+        <!-- Global Trade Expertise -->
+        <div class="col-md-4 mb-4">
             <img src="https://elyoni-pics.s3.eu-north-1.amazonaws.com/global-trade.webp" alt="Trade Icon"
-                class="mb-2 img-fluid">
-            <h5>Global Trade Expertise</h5>
-            <p>Exporting to multiple regions with reliable logistics.</p>
+                class="farm-icon mb-3 img-fluid" />
+            <h5 class="feature-title">Global Trade Expertise</h5>
+            <p class="text-muted">Exporting to multiple regions with reliable logistics.</p>
         </div>
     </div>
-</div>
+</section>
 
-<div class="container py-5">
-    <h2 class="mb-4 text-center">Featured Products</h2>
+<!-- FEATURED PRODUCTS -->
+<section class="farm-section container mt-1 mb-4">
+    <h2 class="mb-4 text-center section-heading">Featured Products</h2>
     <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Cumin Seeds -->
         <div class="col">
-            <div class="card h-100">
+            <div class="card h-100 farm-card shadow-sm">
                 <img src="https://elyoni-pics.s3.eu-north-1.amazonaws.com/elyoni-pics/WhatsApp+Image+2025-01-03+at+01.36.30+(1).jpeg"
-                    class="card-img-top img-fluid" alt="Cumin Seeds">
+                    class="card-img-top" alt="Cumin Seeds" />
                 <div class="card-body">
                     <h5 class="card-title">Cumin Seeds</h5>
-                    <p class="card-text">Two distinct grades with unmatched aroma and medicinal properties.</p>
+                    <p class="card-text">
+                        Two distinct grades with unmatched aroma and medicinal properties.
+                    </p>
                 </div>
             </div>
         </div>
+        <!-- Honey -->
         <div class="col">
-            <div class="card h-100">
-                <img src="https://elyoni-pics.s3.eu-north-1.amazonaws.com/elyoni-pics/honey.jpg"
-                    class="card-img-top img-fluid" alt="Honey">
+            <div class="card h-100 farm-card shadow-sm">
+                <img src="https://elyoni-pics.s3.eu-north-1.amazonaws.com/elyoni-pics/honey.jpg" class="card-img-top"
+                    alt="Honey" />
                 <div class="card-body">
                     <h5 class="card-title">Honey</h5>
                     <p class="card-text">Harvested from high-altitude mountain flowers.</p>
                 </div>
             </div>
         </div>
+        <!-- Pistachios -->
         <div class="col">
-            <div class="card h-100">
+            <div class="card h-100 farm-card shadow-sm">
                 <img src="https://elyoni-pics.s3.eu-north-1.amazonaws.com/products/pistachio-nuts.jpg"
-                    class="card-img-top img-fluid" alt="Pistachios">
+                    class="card-img-top" alt="Pistachios" />
                 <div class="card-body">
                     <h5 class="card-title">Pistachios</h5>
-                    <p class="card-text">Nutrient-rich pistachios from untouched foothills.</p>
+                    <p class="card-text">
+                        Nutrient-rich pistachios from untouched foothills.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
     <div class="text-center mt-4">
-        <a href="/products">
-            <button class="btn btn-primary">View All Products</button>
+        <a routerLink="/products">
+            <button class="btn btn-farm-viewall">View All Products</button>
         </a>
     </div>
-</div>
+</section>

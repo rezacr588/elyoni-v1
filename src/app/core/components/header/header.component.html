@@ -1,36 +1,71 @@
-<!-- src/app/core/components/header/header.component.html -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- Include Font Awesome (or other icon library) if not already done -->
+<!-- 
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+/>
+-->
+
+<nav class="navbar navbar-expand-lg custom-navbar">
     <div class="container">
-        <a class="navbar-brand" routerLink="/">
-            <img src="https://elyoni-pics.s3.eu-north-1.amazonaws.com/Elyoni.jpeg" alt="Elyoni Logo" height="50">
+        <!-- Brand / Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="/">
+            <img src="https://elyoni-pics.s3.eu-north-1.amazonaws.com/Elyoni.jpeg" alt="Elyoni Logo" height="40"
+                class="me-2" />
+            <span>Elyoni</span>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+        <!-- Mobile Toggle Button -->
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
+        <!-- Collapsible Nav Items -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" href="/" routerLink="/">Home</a>
+                    <a class="nav-link nav-btn d-flex align-items-center" href="/">
+                        <i class="fas fa-home me-2"></i>
+                        Home
+                    </a>
                 </li>
                 <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" href="/products" routerLink="/products">Products</a>
+                    <a class="nav-link nav-btn d-flex align-items-center" href="/products">
+                        <i class="fas fa-shopping-basket me-2"></i>
+                        Products
+                    </a>
                 </li>
                 <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" href="/about" routerLink="/about">About Us</a>
+                    <a class="nav-link nav-btn d-flex align-items-center" href="/about">
+                        <i class="fas fa-info-circle me-2"></i>
+                        About Us
+                    </a>
                 </li>
                 <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" href="/sourcing" routerLink="/sourcing">Sourcing</a>
+                    <a class="nav-link nav-btn d-flex align-items-center" href="/sourcing">
+                        <i class="fas fa-globe me-2"></i>
+                        Sourcing
+                    </a>
                 </li>
                 <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" href="/trade" routerLink="/trade">Trade</a>
+                    <a class="nav-link nav-btn d-flex align-items-center" href="/trade">
+                        <i class="fas fa-handshake me-2"></i>
+                        Trade
+                    </a>
                 </li>
                 <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" href="/blog" routerLink="/blog">Blog</a>
+                    <a class="nav-link nav-btn d-flex align-items-center" href="/blog">
+                        <i class="fas fa-blog me-2"></i>
+                        Blog
+                    </a>
                 </li>
                 <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" href="/contact" routerLink="/contact">Contact</a>
+                    <a class="nav-link nav-btn d-flex align-items-center" href="/contact">
+                        <i class="fas fa-envelope me-2"></i>
+                        Contact
+                    </a>
                 </li>
             </ul>
         </div>
