@@ -2,86 +2,81 @@
     <div class="container">
         <!-- Title & Subtitle -->
         <div class="text-center mb-5">
-            <h1 class="section-title">Our Product Categories</h1>
-            <p class="text-muted lead">Explore our wide range of high-quality products</p>
+            <h1 class="section-title position-relative d-inline-block">
+                Our Product Categories
+                <span class="title-decoration"></span>
+            </h1>
+            <p class="text-muted lead mt-3">Explore our wide range of high-quality organic products</p>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="row g-3 mb-4 filter-section">
+            <div class="col-md-4">
+                <select class="form-select farm-filter" [(ngModel)]="selectedCategory">
+                    <option value="all">All Categories</option>
+                    <option value="nuts">Nuts & Seeds</option>
+                    <option value="spices">Spices</option>
+                    <option value="beverages">Beverages</option>
+                    <option value="fruits">Dried Fruits</option>
+                    <option value="oils">Oils</option>
+                    <option value="grains">Ancient Grains</option>
+                    <option value="pantry">Pantry</option>
+                    <option value="proteins">Proteins</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <select class="form-select farm-filter" [(ngModel)]="selectedBadge">
+                    <option value="all">All Labels</option>
+                    <option value="Organic Certified">Organic</option>
+                    <option value="Limited Edition">Limited</option>
+                    <option value="Wellness">Wellness</option>
+                    <option value="Artisan">Artisan</option>
+                    <option value="Superfood">Superfood</option>
+                    <option value="New">New</option>
+                    <option value="Trending">Trending</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <div class="input-group">
+                    <input type="text" class="form-control farm-filter" placeholder="Search products..."
+                        [(ngModel)]="searchQuery">
+                    <button class="btn btn-farm" (click)="clearFilters()">
+                        Clear
+                    </button>
+                </div>
+            </div>
         </div>
 
         <!-- Product Cards -->
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-            <!-- Nuts & Seeds -->
-            <div class="col">
-                <div class="card h-100 farm-card shadow-sm">
-                    <img src="https://elyoni-pics.s3.eu-north-1.amazonaws.com/nuts-and-seeds-hero.jpg"
-                        class="card-img-top" alt="Nuts & Seeds" />
+        <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 g-4">
+            <div class="col" *ngFor="let category of filteredCategories">
+                <div class="card h-100 farm-card shadow-sm overflow-hidden">
+                    <div class="card-img-wrapper position-relative">
+                        <img [src]="category.imageUrl" class="card-img-top" [alt]="category.title" loading="lazy"
+                            (error)="category.imageUrl = fallbackImage">
+                        <span *ngIf="category.badge"
+                            class="position-absolute top-0 start-0 bg-success text-white px-3 py-1 small rounded-end">
+                            {{ category.badge }}
+                        </span>
+                    </div>
                     <div class="card-body text-center">
-                        <h5 class="card-title">Nuts & Seeds</h5>
-                        <p class="card-text text-muted">
-                            Almonds, pistachios, walnuts, and more.
-                        </p>
+                        <small class="text-uppercase text-success fw-bold mb-2 d-block">{{ category.type }}</small>
+                        <h5 class="card-title">{{ category.title }}</h5>
+                        <p class="card-text text-muted">{{ category.description }}</p>
                         <button class="btn btn-farm mt-3">Learn More</button>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Spices & Seasonings -->
-            <div class="col">
-                <div class="card h-100 farm-card shadow-sm">
-                    <img src="https://elyoni-pics.s3.eu-north-1.amazonaws.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL3NlYXNvbmluZ3MuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo4Mjh9fX0%3D.webp"
-                        class="card-img-top" alt="Spices" />
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spices & Seasonings</h5>
-                        <p class="card-text text-muted">
-                            Premium cumin, turmeric, black pepper.
-                        </p>
-                        <button class="btn btn-farm mt-3">Learn More</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Herbs & Teas -->
-            <div class="col">
-                <div class="card h-100 farm-card shadow-sm">
-                    <img src="https://elyoni-pics.s3.eu-north-1.amazonaws.com/Herbal_Tea_Chamomile.webp"
-                        class="card-img-top" alt="Herbs & Teas" />
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Herbs & Teas</h5>
-                        <p class="card-text text-muted">
-                            Therapeutic teas and medicinal herbs.
-                        </p>
-                        <button class="btn btn-farm mt-3">Learn More</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Dry Fruits -->
-            <div class="col">
-                <div class="card h-100 farm-card shadow-sm">
-                    <img src="https://elyoni-pics.s3.eu-north-1.amazonaws.com/2_9b1de245-927f-4864-bdff-a33aa94e43e6_1200x1200.webp"
-                        class="card-img-top" alt="Dry Fruits" />
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Dry Fruits</h5>
-                        <p class="card-text text-muted">
-                            Mulberries, raisins, apricots, and more.
-                        </p>
-                        <button class="btn btn-farm mt-3">Learn More</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Oils & Grains -->
-            <div class="col">
-                <div class="card h-100 farm-card shadow-sm">
-                    <img src="https://elyoni-pics.s3.eu-north-1.amazonaws.com/unnamed.jpg" class="card-img-top"
-                        alt="Oils & Grains" />
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Oils & Grains</h5>
-                        <p class="card-text text-muted">
-                            Sesame oil, rice, and legumes.
-                        </p>
-                        <button class="btn btn-farm mt-3">Learn More</button>
-                    </div>
-                </div>
-            </div>
+        <!-- No Results Message -->
+        <div *ngIf="filteredCategories.length === 0" class="text-center mt-5">
+            <h3 class="text-muted">No products found matching your criteria</h3>
+            <button class="btn btn-farm mt-3" (click)="clearFilters()">
+                Reset Filters
+            </button>
         </div>
     </div>
 </div>

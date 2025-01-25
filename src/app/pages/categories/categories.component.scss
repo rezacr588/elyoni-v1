@@ -1,61 +1,163 @@
-/* 
-  A subtle green-ish gradient reminiscent of farmland.
-  Adjust the colors as desired for your brand.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
 .farm-bg {
-    background: linear-gradient(135deg, #f5f9f0, #edf7e2);
-    font-family: "Nunito", sans-serif; /* Main body font */
+  background: linear-gradient(135deg, #f8faf7 0%, #f1f5ed 100%);
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  padding: 4rem 0;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #1a2a1c;
+  letter-spacing: -0.75px;
+  margin-bottom: 1.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 2.25rem;
   }
-  
-  /* Section Title - using Playfair Display for a rustic, elegant feel */
+}
+
+.title-decoration {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #5a7d4e;
+  border-radius: 4px;
+}
+
+.filter-section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2.5rem;
+}
+
+.farm-filter {
+  border: 2px solid #e0e6dc;
+  border-radius: 8px;
+  padding: 0.875rem 1.25rem;
+  font-size: 0.95rem;
+  color: #2d3a2f;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:focus {
+    border-color: #5a7d4e;
+    box-shadow: 0 0 0 3px rgba(90, 125, 78, 0.15);
+  }
+}
+
+.farm-card {
+  border: none;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+
+    .card-img-top {
+      transform: scale(1.08);
+    }
+  }
+}
+
+.card-img-wrapper {
+  overflow: hidden;
+  border-radius: 14px 14px 0 0;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.1) 100%);
+  }
+}
+
+.card-img-top {
+  height: 260px;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-body {
+  padding: 2rem;
+  background: #ffffff;
+
+  .card-title {
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+    color: #1a2a1c;
+    margin-bottom: 1rem;
+  }
+
+  .card-text {
+    color: #5c6d5f;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.btn-farm {
+  background-color: #5a7d4e;
+  color: #ffffff;
+  padding: 0.875rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+
+  &:hover {
+    background-color: #485f3e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(90, 125, 78, 0.2);
+  }
+}
+
+.text-uppercase.text-success {
+  letter-spacing: 0.8px;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.position-absolute.bg-success {
+  background: #5a7d4e !important;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  z-index: 1;
+}
+
+@media (max-width: 992px) {
+  .card-img-top {
+    height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .farm-bg {
+    padding: 2.5rem 0;
+  }
+}
+
+@media (max-width: 576px) {
   .section-title {
-    font-family: "Playfair Display", serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: #3e4e2d; /* A darker earthy green for headings */
+    font-size: 1.75rem;
   }
-  
-  /* Card Container */
-  .farm-card {
-    border-radius: 10px;
-    overflow: hidden; /* Ensures rounded corners around images */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #fff;
-    /* Slightly tinted white if desired (ex: #fefdfc) */
+
+  .card-img-top {
+    height: 200px;
   }
-  
-  .farm-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-  }
-  
-  /* Card Title */
-  .farm-card .card-title {
-    font-family: "Playfair Display", serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #3e4e2d;
-  }
-  
-  /* Uniform Image Sizes */
-  .farm-card .card-img-top {
-    width: 100%;
-    height: 220px; /* Adjust to your preference */
-    object-fit: cover;
-  }
-  
-  /* Farm-Themed Button */
-  .btn-farm {
-    background-color: #6a994e; /* Earthy green */
-    border: 2px solid #6a994e;
-    color: #fff;
-    font-weight: 600;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .btn-farm:hover {
-    background-color: #527c3b; /* Darker green on hover */
-    border-color: #527c3b;
-    color: #fff;
-  }
-  
+}
