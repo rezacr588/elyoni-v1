@@ -19,3 +19,10 @@ import 'core-js/es/regexp';
 import 'core-js/es/map';
 import 'core-js/es/weak-map';
 import 'core-js/es/set';
+
+/**
+ * iOS specific polyfills
+ */
+import 'core-js/es/promise';
+import 'core-js/es/object/assign';
+import 'core-js/es/array/from';
