@@ -2,12 +2,23 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-interface ProductCategory {
+
+export interface Product {
+  title: string;
+  imageUrl: string;
+  description: string;
+  price: number;
+  badge?: string;
+}
+
+export interface ProductCategory {
   title: string;
   imageUrl: string;
   description: string;
   badge?: string;
-  type: string;
+    type: string;
+    products?: Product[];
+
 }
 
 @Component({

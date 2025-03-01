@@ -7,6 +7,7 @@ import { SourcingComponent } from './pages/sourcing/sourcing.component';
 import { TradeComponent } from './pages/trade/trade.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ProductsComponent } from './pages/products/products.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -16,5 +17,6 @@ export const routes: Routes = [
     { path: 'trade', component: TradeComponent },
     { path: 'blog', component: BlogComponent },
     { path: 'contact', component: ContactComponent },
+    { path: 'products/:categoryType', component: ProductsComponent },
     { path: '**', redirectTo: '', pathMatch: 'full' },
 ];

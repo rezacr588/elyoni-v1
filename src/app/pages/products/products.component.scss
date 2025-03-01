@@ -1,0 +1,30 @@
+// Define the color variables used in this file
+$farm-green-main: #6a994e;     /* Vibrant medium green for accents */
+$farm-green-dark: #3e4e2d;     /* Earthy dark green for headings */
+
+// products.component.scss
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba($farm-green-main, 0.15);
+  
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+  
+    &-img-top {
+      height: 250px;
+      object-fit: cover;
+      border-bottom: 2px solid $farm-green-main;
+    }
+  
+    &-title {
+      color: $farm-green-dark;
+      font-family: 'Montserrat', sans-serif;
+    }
+  }
+  
+  .badge.bg-warning {
+    font-size: 0.9rem;
+    padding: 0.5em 0.75em;
+  }
